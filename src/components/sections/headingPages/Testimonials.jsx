@@ -7,7 +7,6 @@ export default function Testimonials() {
                     <h1>Testimonials</h1>
             </article>
 
-
             <section className="testimonials-cards">
                 <TestimonialCard name="Micheal Caldwell" description="This is the best Mediterranean food that I've ever had!"/>
                 <TestimonialCard name="Alan Chen" description="My Shiba Inu, Mugi, really loved the cozy vibes and 

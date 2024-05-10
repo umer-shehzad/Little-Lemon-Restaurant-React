@@ -465,7 +465,7 @@ footer > menu {
   }
 
   .specials-cards {
-    display: none;
+    /* display: none; */
   }
 
   .specials-carousel {
@@ -505,7 +505,7 @@ footer > menu {
   }
 
   .testimonials-cards {
-    display: none;
+    /* display: none; */
   }
 
   .about-us {
