@@ -234,13 +234,22 @@ Link:link {
 
 .testimonial-card {
   background-color: #edefee;
-  padding: 1rem 1rem 0 1rem;
+  padding: 1rem 0.7rem 0 0.7rem;
+  width: 90%;
+  height: 90%;
+  border-radius: 1.5rem;
 }
 
 .testimonial-card > img {
-  width: 3rem;
+  width: 4rem;
   height: 3rem;
   object-fit: contain;
+}
+
+.testimonial-card > p {
+  margin-top: -1rem;
+  margin-bottom: 2.5rem;
+  text-align: start;
 }
 
 .testimonials-carousel {
@@ -497,11 +506,6 @@ footer > menu {
 
   .testimonials-cards {
     display: none;
-  }
-
-  .testimonial-card > p {
-    margin-top: -1rem;
-    margin-bottom: 2.5rem;
   }
 
   .about-us {
