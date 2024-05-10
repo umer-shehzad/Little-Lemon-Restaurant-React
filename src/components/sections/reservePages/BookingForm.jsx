@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 export default function ReservationForm(props) {
+  const navigate = useNavigate();
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,8 +29,28 @@ export default function ReservationForm(props) {
     setFinalTime(props.availableTimes.map((times) => <option>{times}</option>));
   }
 
+  const handleReserveTableClick = (e) => {
+    e.preventDefault();
+    if (fName && lName && email && tel && people && date && occasion && finalTime && preferences && comments) {
+      // clear all input states after submittion
+      setFName('');
+      setLName('');
+      setEmail('');
+      setTel('');
+      setPeople('');
+      setDate('');
+      setOccasion('');
+      setFinalTime(null);
+      setPreferences('');
+      setComments('');
+
+      navigate('/confirmation');
+      toast.success('Your Reservation is Confirmed!');
+    }
+  }
+
   return (
-    <form className="reservation-form">
+    <form className="reservation-form" onSubmit={handleReserveTableClick}>
       <div>
         <label htmlFor="fName" className="reservation-label">First Name</label> <br></br>
         <input
@@ -165,17 +188,19 @@ export default function ReservationForm(props) {
       </div>
 
       <div>
-        {/* <br></br> */}
         <small style={{ display: 'block', width: '50vw', textAlign: 'justify' }}>
           <p>
             Note: You cannot edit your reservation after submission. Please
             double-check your answer before submitting your reservation request.
           </p>
         </small>
-        <div style={{textAlign:'center', marginTop: 30, marginBottom: 10}}>
-          <Link className="action-button" to="/confirmation">
+        <div style={{ textAlign: 'center', marginTop: 30, marginBottom: 10 }}>
+          {/* <Link className="action-button" to="/confirmation">
             Book Table
-          </Link>
+          </Link> */}
+          <button type="submit" className="action-button">
+            Book Table
+          </button>
         </div>
       </div>
     </form>
