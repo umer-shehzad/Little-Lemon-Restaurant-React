@@ -1,5 +1,8 @@
-import HeroImage from "../../assets/food/food5.jpeg";
 import { Link } from "react-router-dom";
+
+import HeroImage from "../../assets/food/food5.jpeg";
+import Menu from "../../assets/menu.webp";
+
 export default function Confirmation() {
   return (
     <header className="confirmation-header">
@@ -17,7 +20,7 @@ export default function Confirmation() {
       <section className="redirect-buttons">
         <a
           className="redirect-button"
-          href={require("../../assets/menu.webp")}
+          href={Menu}
           target="_blank"
           rel="noreferrer"
         >
